@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fetch-rewards-take-home/static/css/main.50d80972.css",
+    "main.js": "/fetch-rewards-take-home/static/js/main.9ef672bb.js",
+    "index.html": "/fetch-rewards-take-home/index.html",
+    "main.50d80972.css.map": "/fetch-rewards-take-home/static/css/main.50d80972.css.map",
+    "main.9ef672bb.js.map": "/fetch-rewards-take-home/static/js/main.9ef672bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50d80972.css",
+    "static/js/main.9ef672bb.js"
+  ]
+}
