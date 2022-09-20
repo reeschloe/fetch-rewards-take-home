@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import UserForm from "./layout/UserForm";
+import Header from "./layout/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="card" style={{maxWidth: "80%", alignItems: "center", marginLeft: "10%"}}>
+      <div className="card-body" style={{width: "100%"}}>
+        <Header />
+        <UserForm />
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
