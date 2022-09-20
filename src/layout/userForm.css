@@ -1,3 +1,8 @@
 .form-label {
     width: 100%;
 }
+
+.form-group {
+    display: flex;
+    justify-content: center;
+}

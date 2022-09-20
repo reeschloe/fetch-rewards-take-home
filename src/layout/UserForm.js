@@ -9,18 +9,19 @@ function UserForm() {
     const [states, setStates] = useState([])
     const [error, setError] = useState("")
     const [success, setSuccess] = useState(false)
-    
+
+    async function getOccupationsAndStates() {
+        try {   
+            const dataFromAPI = await fetch(url)
+            const data = await dataFromAPI.json()
+            setOccupations(["Select Occupation", ...data.occupations])
+            setStates([{name: "Select State", abbreviation: ""}, ...data.states])
+        } catch (error) {
+            setError(error)
+        } 
+    }
+
     useEffect(() => {
-        async function getOccupationsAndStates() {
-            try {   
-                const dataFromAPI = await fetch(url)
-                const data = await dataFromAPI.json()
-                setOccupations(["Select Occupation", ...data.occupations])
-                setStates([{name: "Select State", abbreviation: ""}, ...data.states])
-            } catch (error) {
-                setError(error)
-            } 
-        }
         getOccupationsAndStates();
     }, [])
 
@@ -38,6 +39,18 @@ function UserForm() {
         setFormData({...formData, [target.name]: target.value}) 
     }
 
+    async function submitFormData() {
+        try {
+            await fetch(url, {method: 'POST', headers: {"content-type": "application/json"}, body: JSON.stringify(formData) });
+            setSuccess(true);
+            setTimeout(() => {
+                setSuccess(false)
+            }, 5000);
+        } catch (error) {
+            setError(error)
+            console.log(error)
+        }   
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -46,18 +59,7 @@ function UserForm() {
             setError({message: `Must fill out all fields.`})
             return () => abortController.abort();
         }
-        async function submitFormData() {
-            try {
-                await fetch(url, {method: 'POST', headers: {"content-type": "application/json"}, body: JSON.stringify(formData) });
-                setSuccess(true);
-                setTimeout(() => {
-                    setSuccess(false)
-                }, 3000);
-            } catch (error) {
-                setError(error)
-                console.log(error)
-            }   
-        }
+        
         submitFormData();
         setFormData(initialFormState);
         setError("");
@@ -114,8 +116,8 @@ function UserForm() {
                 </div>
                 : null
                 }
-                <div className="form-group" style={{display: "flex", justifyContent: "center"}}>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                <div className="form-group">
+                    <button type="submit" className="btn btn-dark btn-lg">Submit</button>
                 </div>
                 
             </form>

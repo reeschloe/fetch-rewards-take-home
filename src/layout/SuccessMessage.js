@@ -1,9 +1,9 @@
 import React from "react";
 
-function ErrorAlert({ error }) {
+function SuccessMessage() {
   return (
       <div className="alert alert-success m-2">Submitted!</div>
   );
 }
 
-export default ErrorAlert;
+export default SuccessMessage;
