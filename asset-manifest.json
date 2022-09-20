@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fetch-rewards-take-home/static/css/main.50d80972.css",
-    "main.js": "/fetch-rewards-take-home/static/js/main.9ef672bb.js",
+    "main.css": "/fetch-rewards-take-home/static/css/main.b818419d.css",
+    "main.js": "/fetch-rewards-take-home/static/js/main.1471c0b5.js",
     "index.html": "/fetch-rewards-take-home/index.html",
-    "main.50d80972.css.map": "/fetch-rewards-take-home/static/css/main.50d80972.css.map",
-    "main.9ef672bb.js.map": "/fetch-rewards-take-home/static/js/main.9ef672bb.js.map"
+    "main.b818419d.css.map": "/fetch-rewards-take-home/static/css/main.b818419d.css.map",
+    "main.1471c0b5.js.map": "/fetch-rewards-take-home/static/js/main.1471c0b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.50d80972.css",
-    "static/js/main.9ef672bb.js"
+    "static/css/main.b818419d.css",
+    "static/js/main.1471c0b5.js"
   ]
 }
